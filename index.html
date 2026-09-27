@@ -1,0 +1,2241 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Navruz — Milliy Taomlar</title>
+
+  <meta
+    name="description"
+    content="Navruz — o'zbek milliy taomlari. Mazali taomlar, milliy muhit va unutilmas mehmondo'stlik."
+  >
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700;800&display=swap"
+    rel="stylesheet"
+  >
+
+  <style>
+    :root {
+      --green: #12372a;
+      --green-dark: #0b241b;
+      --green-light: #1d5b43;
+
+      --gold: #d6a84f;
+      --gold-light: #f1d58b;
+
+      --cream: #f8f4ea;
+      --white: #ffffff;
+      --text: #20251f;
+      --muted: #73766f;
+
+      --border: rgba(18, 55, 42, 0.12);
+
+      --shadow:
+        0 20px 60px rgba(11, 36, 27, 0.12);
+
+      --radius: 22px;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "DM Sans", sans-serif;
+      background: var(--cream);
+      color: var(--text);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    img {
+      width: 100%;
+      display: block;
+      object-fit: cover;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button {
+      border: 0;
+      cursor: pointer;
+      font-family: inherit;
+    }
+
+    .container {
+      width: min(1180px, 92%);
+      margin: 0 auto;
+    }
+
+    /* =========================
+       HEADER
+    ========================== */
+
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      transition: 0.3s ease;
+    }
+
+    header.scrolled {
+      background: rgba(11, 36, 27, 0.96);
+      backdrop-filter: blur(16px);
+      box-shadow: 0 10px 40px rgba(0,0,0,0.15);
+    }
+
+    .navbar {
+      height: 82px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 30px;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      color: white;
+    }
+
+    .logo-mark {
+      width: 42px;
+      height: 42px;
+      border: 2px solid var(--gold);
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      color: var(--gold);
+      font-family: "Playfair Display", serif;
+      font-weight: 700;
+      font-size: 19px;
+    }
+
+    .logo-text strong {
+      display: block;
+      font-family: "Playfair Display", serif;
+      font-size: 21px;
+      line-height: 1;
+    }
+
+    .logo-text span {
+      font-size: 10px;
+      letter-spacing: 3px;
+      color: var(--gold-light);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 30px;
+      list-style: none;
+      color: rgba(255,255,255,0.9);
+      font-size: 14px;
+    }
+
+    .nav-links a {
+      transition: 0.2s;
+    }
+
+    .nav-links a:hover {
+      color: var(--gold-light);
+    }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .cart-btn {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.1);
+      color: white;
+      position: relative;
+      font-size: 18px;
+    }
+
+    .cart-count {
+      position: absolute;
+      top: -3px;
+      right: -3px;
+      width: 19px;
+      height: 19px;
+      border-radius: 50%;
+      background: var(--gold);
+      color: var(--green-dark);
+      font-size: 10px;
+      font-weight: 700;
+      display: grid;
+      place-items: center;
+    }
+
+    .btn {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      gap: 8px;
+      padding: 13px 21px;
+      border-radius: 999px;
+      font-weight: 600;
+      font-size: 14px;
+      transition: 0.25s ease;
+    }
+
+    .btn-gold {
+      background: var(--gold);
+      color: var(--green-dark);
+    }
+
+    .btn-gold:hover {
+      background: var(--gold-light);
+      transform: translateY(-2px);
+    }
+
+    .btn-outline {
+      color: white;
+      border: 1px solid rgba(255,255,255,0.35);
+    }
+
+    .btn-outline:hover {
+      background: rgba(255,255,255,0.1);
+    }
+
+    .mobile-toggle {
+      display: none;
+      width: 43px;
+      height: 43px;
+      background: rgba(255,255,255,0.1);
+      color: white;
+      border-radius: 50%;
+      font-size: 20px;
+    }
+
+    /* =========================
+       HERO
+    ========================== */
+
+    .hero {
+      min-height: 760px;
+      height: 100vh;
+      position: relative;
+      display: flex;
+      align-items: center;
+      background:
+        linear-gradient(
+          90deg,
+          rgba(5, 20, 14, 0.92) 0%,
+          rgba(5, 20, 14, 0.68) 50%,
+          rgba(5, 20, 14, 0.25) 100%
+        ),
+        url("https://images.unsplash.com/photo-1601050690597-df0568f70950?auto=format&fit=crop&w=1800&q=85")
+        center/cover;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(
+          circle at 80% 40%,
+          rgba(214,168,79,0.18),
+          transparent 30%
+        );
+      pointer-events: none;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 680px;
+      color: white;
+      padding-top: 70px;
+    }
+
+    .eyebrow {
+      color: var(--gold-light);
+      text-transform: uppercase;
+      letter-spacing: 4px;
+      font-size: 12px;
+      font-weight: 700;
+      margin-bottom: 18px;
+    }
+
+    .hero h1 {
+      font-family: "Playfair Display", serif;
+      font-size: clamp(52px, 7vw, 88px);
+      line-height: 0.98;
+      margin-bottom: 25px;
+    }
+
+    .hero h1 span {
+      color: var(--gold-light);
+    }
+
+    .hero p {
+      max-width: 560px;
+      color: rgba(255,255,255,0.8);
+      font-size: 17px;
+      margin-bottom: 34px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .hero-info {
+      position: absolute;
+      z-index: 2;
+      bottom: 35px;
+      left: 0;
+      width: 100%;
+    }
+
+    .hero-info-inner {
+      display: flex;
+      justify-content: space-between;
+      color: rgba(255,255,255,0.75);
+      font-size: 13px;
+    }
+
+    /* =========================
+       SECTION
+    ========================== */
+
+    section {
+      padding: 100px 0;
+    }
+
+    .section-heading {
+      text-align: center;
+      max-width: 650px;
+      margin: 0 auto 50px;
+    }
+
+    .section-heading .eyebrow {
+      color: var(--green-light);
+      margin-bottom: 10px;
+    }
+
+    .section-heading h2 {
+      font-family: "Playfair Display", serif;
+      color: var(--green);
+      font-size: clamp(36px, 5vw, 55px);
+      line-height: 1.1;
+      margin-bottom: 15px;
+    }
+
+    .section-heading p {
+      color: var(--muted);
+    }
+
+    /* =========================
+       FEATURES
+    ========================== */
+
+    .features {
+      background: var(--white);
+    }
+
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 25px;
+    }
+
+    .feature-card {
+      padding: 35px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      background: white;
+      transition: 0.3s;
+    }
+
+    .feature-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow);
+    }
+
+    .feature-icon {
+      width: 54px;
+      height: 54px;
+      border-radius: 16px;
+      display: grid;
+      place-items: center;
+      background: #f3ead6;
+      color: var(--green);
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+
+    .feature-card h3 {
+      color: var(--green);
+      font-family: "Playfair Display", serif;
+      font-size: 23px;
+      margin-bottom: 8px;
+    }
+
+    .feature-card p {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    /* =========================
+       MENU
+    ========================== */
+
+    .menu-section {
+      background: var(--cream);
+    }
+
+    .categories {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 40px;
+    }
+
+    .category-btn {
+      padding: 11px 20px;
+      border-radius: 999px;
+      background: white;
+      color: var(--green);
+      border: 1px solid var(--border);
+      transition: 0.2s;
+      font-weight: 600;
+    }
+
+    .category-btn:hover,
+    .category-btn.active {
+      background: var(--green);
+      color: white;
+    }
+
+    .menu-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 25px;
+    }
+
+    .menu-card {
+      background: white;
+      border-radius: var(--radius);
+      overflow: hidden;
+      border: 1px solid var(--border);
+      transition: 0.3s;
+    }
+
+    .menu-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow);
+    }
+
+    .menu-image {
+      height: 230px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .menu-image img {
+      height: 100%;
+      transition: 0.5s;
+    }
+
+    .menu-card:hover .menu-image img {
+      transform: scale(1.05);
+    }
+
+    .popular {
+      position: absolute;
+      top: 15px;
+      left: 15px;
+      background: var(--gold);
+      color: var(--green-dark);
+      padding: 6px 11px;
+      border-radius: 999px;
+      font-size: 11px;
+      font-weight: 700;
+    }
+
+    .menu-body {
+      padding: 22px;
+    }
+
+    .menu-top {
+      display: flex;
+      justify-content: space-between;
+      gap: 15px;
+      margin-bottom: 8px;
+    }
+
+    .menu-top h3 {
+      font-family: "Playfair Display", serif;
+      color: var(--green);
+      font-size: 22px;
+    }
+
+    .price {
+      white-space: nowrap;
+      color: var(--gold);
+      font-weight: 800;
+      font-size: 15px;
+    }
+
+    .menu-body p {
+      color: var(--muted);
+      font-size: 13px;
+      min-height: 42px;
+      margin-bottom: 18px;
+    }
+
+    .add-btn {
+      width: 100%;
+      padding: 11px;
+      border-radius: 12px;
+      background: #f2f5f1;
+      color: var(--green);
+      font-weight: 700;
+      transition: 0.2s;
+    }
+
+    .add-btn:hover {
+      background: var(--green);
+      color: white;
+    }
+
+    /* =========================
+       STORY
+    ========================== */
+
+    .story {
+      background: var(--green);
+      color: white;
+    }
+
+    .story-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 70px;
+      align-items: center;
+    }
+
+    .story-image {
+      height: 550px;
+      border-radius: 28px;
+      overflow: hidden;
+    }
+
+    .story-image img {
+      height: 100%;
+    }
+
+    .story .eyebrow {
+      color: var(--gold-light);
+    }
+
+    .story h2 {
+      font-family: "Playfair Display", serif;
+      font-size: clamp(38px, 5vw, 58px);
+      line-height: 1.05;
+      margin-bottom: 25px;
+    }
+
+    .story p {
+      color: rgba(255,255,255,0.7);
+      margin-bottom: 20px;
+    }
+
+    .stats {
+      display: flex;
+      gap: 35px;
+      margin-top: 35px;
+    }
+
+    .stat strong {
+      display: block;
+      font-family: "Playfair Display", serif;
+      color: var(--gold-light);
+      font-size: 32px;
+    }
+
+    .stat span {
+      font-size: 12px;
+      color: rgba(255,255,255,0.6);
+    }
+
+    /* =========================
+       RESERVATION
+    ========================== */
+
+    .reservation {
+      background: white;
+    }
+
+    .reservation-box {
+      background:
+        linear-gradient(
+          120deg,
+          rgba(11,36,27,0.95),
+          rgba(18,55,42,0.88)
+        ),
+        url("https://images.unsplash.com/photo-1550966871-3ed3cdb5ed0c?auto=format&fit=crop&w=1600&q=80")
+        center/cover;
+
+      border-radius: 30px;
+      padding: 65px;
+      color: white;
+      text-align: center;
+    }
+
+    .reservation-box h2 {
+      font-family: "Playfair Display", serif;
+      font-size: clamp(36px, 5vw, 55px);
+      margin-bottom: 15px;
+    }
+
+    .reservation-box p {
+      color: rgba(255,255,255,0.7);
+      max-width: 550px;
+      margin: 0 auto 28px;
+    }
+
+    /* =========================
+       FOOTER
+    ========================== */
+
+    footer {
+      background: #081c14;
+      color: white;
+      padding: 70px 0 25px;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr 1fr;
+      gap: 50px;
+      padding-bottom: 50px;
+    }
+
+    footer h3 {
+      font-family: "Playfair Display", serif;
+      font-size: 22px;
+      margin-bottom: 17px;
+    }
+
+    footer p,
+    footer a {
+      color: rgba(255,255,255,0.58);
+      font-size: 13px;
+    }
+
+    footer a {
+      display: block;
+      margin-bottom: 9px;
+      transition: 0.2s;
+    }
+
+    footer a:hover {
+      color: var(--gold-light);
+    }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,0.08);
+      padding-top: 20px;
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      color: rgba(255,255,255,0.4);
+      font-size: 12px;
+    }
+
+    /* =========================
+       MODAL
+    ========================== */
+
+    .modal-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.65);
+      backdrop-filter: blur(5px);
+      z-index: 2000;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .modal-overlay.active {
+      display: flex;
+    }
+
+    .modal {
+      background: white;
+      width: min(500px, 100%);
+      border-radius: 25px;
+      padding: 35px;
+      position: relative;
+      animation: modalIn 0.25s ease;
+    }
+
+    @keyframes modalIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px) scale(0.97);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
+    }
+
+    .modal h2 {
+      font-family: "Playfair Display", serif;
+      color: var(--green);
+      font-size: 32px;
+      margin-bottom: 7px;
+    }
+
+    .modal > p {
+      color: var(--muted);
+      font-size: 14px;
+      margin-bottom: 25px;
+    }
+
+    .close-modal {
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      width: 35px;
+      height: 35px;
+      border-radius: 50%;
+      background: #f2f2f2;
+      font-size: 20px;
+    }
+
+    .form-group {
+      margin-bottom: 15px;
+    }
+
+    .form-group label {
+      display: block;
+      color: var(--green);
+      font-weight: 600;
+      font-size: 13px;
+      margin-bottom: 6px;
+    }
+
+    .form-group input,
+    .form-group select {
+      width: 100%;
+      padding: 13px 14px;
+      border-radius: 12px;
+      border: 1px solid #ddd;
+      outline: none;
+      font-family: inherit;
+    }
+
+    .form-group input:focus,
+    .form-group select:focus {
+      border-color: var(--green);
+    }
+
+    .submit-btn {
+      width: 100%;
+      margin-top: 5px;
+    }
+
+    /* =========================
+       CART
+    ========================== */
+
+    .cart-panel {
+      position: fixed;
+      top: 0;
+      right: -420px;
+      width: min(420px, 100%);
+      height: 100vh;
+      background: white;
+      z-index: 1800;
+      box-shadow: -20px 0 60px rgba(0,0,0,0.2);
+      transition: 0.35s ease;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .cart-panel.active {
+      right: 0;
+    }
+
+    .cart-header {
+      padding: 25px;
+      border-bottom: 1px solid #eee;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .cart-header h2 {
+      color: var(--green);
+      font-family: "Playfair Display", serif;
+    }
+
+    .cart-close {
+      width: 35px;
+      height: 35px;
+      border-radius: 50%;
+      background: #f2f2f2;
+    }
+
+    .cart-items {
+      flex: 1;
+      overflow-y: auto;
+      padding: 20px;
+    }
+
+    .cart-item {
+      padding: 15px 0;
+      border-bottom: 1px solid #eee;
+      display: flex;
+      justify-content: space-between;
+      gap: 15px;
+    }
+
+    .cart-item h4 {
+      color: var(--green);
+      font-size: 14px;
+    }
+
+    .cart-item p {
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .remove-item {
+      color: #a33;
+      background: transparent;
+      font-size: 12px;
+    }
+
+    .cart-footer {
+      padding: 20px;
+      border-top: 1px solid #eee;
+    }
+
+    .cart-total {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 15px;
+      font-weight: 800;
+      color: var(--green);
+    }
+
+    .empty-cart {
+      color: var(--muted);
+      text-align: center;
+      padding: 50px 0;
+    }
+
+    /* =========================
+       RESPONSIVE
+    ========================== */
+
+    @media (max-width: 900px) {
+
+      .nav-links,
+      .nav-actions .btn {
+        display: none;
+      }
+
+      .mobile-toggle {
+        display: block;
+      }
+
+      .mobile-nav {
+        display: none;
+        position: absolute;
+        top: 82px;
+        left: 0;
+        width: 100%;
+        background: var(--green-dark);
+        padding: 20px;
+      }
+
+      .mobile-nav.active {
+        display: block;
+      }
+
+      .mobile-nav a {
+        display: block;
+        color: white;
+        padding: 13px 0;
+        border-bottom: 1px solid rgba(255,255,255,0.08);
+      }
+
+      .feature-grid,
+      .menu-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .story-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+
+      .story-image {
+        height: 400px;
+      }
+
+      .footer-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 600px) {
+
+      section {
+        padding: 75px 0;
+      }
+
+      .hero {
+        min-height: 700px;
+      }
+
+      .hero h1 {
+        font-size: 52px;
+      }
+
+      .hero p {
+        font-size: 15px;
+      }
+
+      .hero-info-inner {
+        flex-direction: column;
+        gap: 8px;
+      }
+
+      .feature-grid,
+      .menu-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .feature-card {
+        padding: 28px;
+      }
+
+      .menu-image {
+        height: 250px;
+      }
+
+      .reservation-box {
+        padding: 45px 25px;
+      }
+
+      .stats {
+        gap: 20px;
+        flex-wrap: wrap;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+      }
+
+      .footer-bottom {
+        flex-direction: column;
+      }
+
+      .modal {
+        padding: 28px 20px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- =========================
+       HEADER
+  ========================== -->
+
+  <header id="header">
+    <div class="container navbar">
+
+      <a href="#home" class="logo">
+        <div class="logo-mark">N</div>
+
+        <div class="logo-text">
+          <strong>Bahor</strong>
+          <span>MILLIY TAOMLAR</span>
+        </div>
+      </a>
+
+      <nav>
+        <ul class="nav-links">
+          <li><a href="#home">Bosh sahifa</a></li>
+          <li><a href="#menu">Menyu</a></li>
+          <li><a href="#about">Biz haqimizda</a></li>
+          <li><a href="#reservation">Aloqa</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+
+        <button class="cart-btn" id="cartButton">
+          🛒
+          <span class="cart-count" id="cartCount">0</span>
+        </button>
+
+        <button
+          class="btn btn-gold"
+          onclick="openReservation()"
+        >
+          Stol band qilish
+        </button>
+
+        <button class="mobile-toggle" id="mobileToggle">
+          ☰
+        </button>
+
+      </div>
+
+    </div>
+
+    <div class="mobile-nav" id="mobileNav">
+      <div class="container">
+        <a href="#home">Bosh sahifa</a>
+        <a href="#menu">Menyu</a>
+        <a href="#about">Biz haqimizda</a>
+        <a href="#reservation">Aloqa</a>
+
+        <br>
+
+        <button
+          class="btn btn-gold"
+          onclick="openReservation()"
+        >
+          Stol band qilish
+        </button>
+      </div>
+    </div>
+
+  </header>
+
+
+  <!-- =========================
+       HERO
+  ========================== -->
+
+  <main>
+
+    <section class="hero" id="home">
+
+      <div class="container">
+
+        <div class="hero-content">
+
+          <div class="eyebrow">
+            O'zbek milliy taomlari
+          </div>
+
+          <h1>
+            Milliy ta'm.
+            <br>
+            <span>Unutilmas lahza.</span>
+          </h1>
+
+          <p>
+            Avloddan-avlodga o'tib kelayotgan o'zbek
+            oshxonasi an'analari zamonaviy mehmondo'stlik
+            bilan uyg'unlashgan maskan.
+          </p>
+
+          <div class="hero-buttons">
+
+            <a href="#menu" class="btn btn-gold">
+              Menyuni ko'rish →
+            </a>
+
+            <button
+              class="btn btn-outline"
+              onclick="openReservation()"
+            >
+              Stol band qilish
+            </button>
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <div class="hero-info">
+
+        <div class="container hero-info-inner">
+
+          <span>📍 Toshkent shahri</span>
+
+          <span>
+            Dushanba — Yakshanba · 10:00 — 23:00
+          </span>
+
+          <span>☎ +998 71 200 20 20</span>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         FEATURES
+    ========================== -->
+
+    <section class="features">
+
+      <div class="container">
+
+        <div class="section-heading">
+
+          <div class="eyebrow">
+            Nega Navruz?
+          </div>
+
+          <h2>
+            Taomdan ko'ra ko'proq
+          </h2>
+
+          <p>
+            Biz uchun restoran — shunchaki ovqatlanish
+            joyi emas. Bu milliy madaniyat, mehmondo'stlik
+            va yaxshi xotiralar uchrashadigan maskan.
+          </p>
+
+        </div>
+
+
+        <div class="feature-grid">
+
+          <div class="feature-card">
+
+            <div class="feature-icon">🍚</div>
+
+            <h3>Haqiqiy milliy ta'm</h3>
+
+            <p>
+              An'anaviy retseptlar va saralangan
+              mahsulotlar asosida tayyorlangan taomlar.
+            </p>
+
+          </div>
+
+
+          <div class="feature-card">
+
+            <div class="feature-icon">🌿</div>
+
+            <h3>Tabiiy mahsulotlar</h3>
+
+            <p>
+              Har kuni yangi va sifatli mahsulotlardan
+              foydalanamiz.
+            </p>
+
+          </div>
+
+
+          <div class="feature-card">
+
+            <div class="feature-icon">🤝</div>
+
+            <h3>Samimiy mehmondo'stlik</h3>
+
+            <p>
+              Har bir mehmonni o'zimiznikidek kutib olish —
+              Navruz falsafasining bir qismi.
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         MENU
+    ========================== -->
+
+    <section class="menu-section" id="menu">
+
+      <div class="container">
+
+        <div class="section-heading">
+
+          <div class="eyebrow">
+            Bizning menyu
+          </div>
+
+          <h2>
+            Dasturxondagi durdonalar
+          </h2>
+
+          <p>
+            O'zbek oshxonasining eng sevimli taomlarini
+            bir dasturxonda jamladik.
+          </p>
+
+        </div>
+
+
+        <div class="categories">
+
+          <button
+            class="category-btn active"
+            data-category="all"
+          >
+            Barchasi
+          </button>
+
+          <button
+            class="category-btn"
+            data-category="asosiy"
+          >
+            Asosiy taomlar
+          </button>
+
+          <button
+            class="category-btn"
+            data-category="somsa"
+          >
+            Somsa
+          </button>
+
+          <button
+            class="category-btn"
+            data-category="salat"
+          >
+            Salatlar
+          </button>
+
+          <button
+            class="category-btn"
+            data-category="desert"
+          >
+            Desert
+          </button>
+
+        </div>
+
+
+        <div class="menu-grid" id="menuGrid">
+
+          <!-- 1 -->
+
+          <article
+            class="menu-card"
+            data-category="asosiy"
+          >
+
+            <div class="menu-image">
+
+              <img
+                src="https://images.unsplash.com/photo-1601050690117-94f5f6fa8bd7?auto=format&fit=crop&w=900&q=80"
+                alt="O'zbek palovi"
+              >
+
+              <span class="popular">
+                Mashhur
+              </span>
+
+            </div>
+
+            <div class="menu-body">
+
+              <div class="menu-top">
+
+                <h3>Navruz Palovi</h3>
+
+                <span class="price">
+                  55 000 so'm
+                </span>
+
+              </div>
+
+              <p>
+                Guruch, sabzi, go'sht, no'xat va mayiz bilan
+                tayyorlangan an'anaviy to'yimli palov.
+              </p>
+
+              <button
+                class="add-btn"
+                onclick="addToCart('Navruz Palovi', 55000)"
+              >
+                + Savatga qo'shish
+              </button>
+
+            </div>
+
+          </article>
+
+
+          <!-- 2 -->
+
+          <article
+            class="menu-card"
+            data-category="somsa"
+          >
+
+            <div class="menu-image">
+
+              <img
+                src="https://images.unsplash.com/photo-1601050690597-df0568f70950?auto=format&fit=crop&w=900&q=80"
+                alt="Somsa"
+              >
+
+            </div>
+
+            <div class="menu-body">
+
+              <div class="menu-top">
+
+                <h3>Tandir Somsa</h3>
+
+                <span class="price">
+                  22 000 so'm
+                </span>
+
+              </div>
+
+              <p>
+                Tandirda pishirilgan, shirali go'shtli
+                va piyozli milliy somsa.
+              </p>
+
+              <button
+                class="add-btn"
+                onclick="addToCart('Tandir Somsa', 22000)"
+              >
+                + Savatga qo'shish
+              </button>
+
+            </div>
+
+          </article>
+
+
+          <!-- 3 -->
+
+          <article
+            class="menu-card"
+            data-category="asosiy"
+          >
+
+            <div class="menu-image">
+
+              <img
+                src="https://images.unsplash.com/photo-1628294895950-9805252327bc?auto=format&fit=crop&w=900&q=80"
+                alt="Manti"
+              >
+
+            </div>
+
+            <div class="menu-body">
+
+              <div class="menu-top">
+
+                <h3>Go'shtli Manti</h3>
+
+                <span class="price">
+                  48 000 so'm
+                </span>
+
+              </div>
+
+              <p>
+                Yupqa xamir va mayin go'shtdan tayyorlangan
+                bug'da pishirilgan manti.
+              </p>
+
+              <button
+                class="add-btn"
+                onclick="addToCart('Go‘shtli Manti', 48000)"
+              >
+                + Savatga qo'shish
+              </button>
+
+            </div>
+
+          </article>
+
+
+          <!-- 4 -->
+
+          <article
+            class="menu-card"
+            data-category="asosiy"
+          >
+
+            <div class="menu-image">
+
+              <img
+                src="https://images.unsplash.com/photo-1534939561126-855b8675edd7?auto=format&fit=crop&w=900&q=80"
+                alt="Lag'mon"
+              >
+
+            </div>
+
+            <div class="menu-body">
+
+              <div class="menu-top">
+
+                <h3>Chuchvara</h3>
+
+                <span class="price">
+                  42 000 so'm
+                </span>
+
+              </div>
+
+              <p>
+                Uy uslubida tayyorlangan mayin xamirli
+                go'shtli chuchvara.
+              </p>
+
+              <button
+                class="add-btn"
+                onclick="addToCart('Chuchvara', 42000)"
+              >
+                + Savatga qo'shish
+              </button>
+
+            </div>
+
+          </article>
+
+
+          <!-- 5 -->
+
+          <article
+            class="menu-card"
+            data-category="salat"
+          >
+
+            <div class="menu-image">
+
+              <img
+                src="https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=900&q=80"
+                alt="Achichuk salat"
+              >
+
+            </div>
+
+            <div class="menu-body">
+
+              <div class="menu-top">
+
+                <h3>Achichuk</h3>
+
+                <span class="price">
+                  25 000 so'm
+                </span>
+
+              </div>
+
+              <p>
+                Yangi pomidor, piyoz va ko'katlardan
+                tayyorlangan klassik salat.
+              </p>
+
+              <button
+                class="add-btn"
+                onclick="addToCart('Achichuk', 25000)"
+              >
+                + Savatga qo'shish
+              </button>
+
+            </div>
+
+          </article>
+
+
+          <!-- 6 -->
+
+          <article
+            class="menu-card"
+            data-category="desert"
+          >
+
+            <div class="menu-image">
+
+              <img
+                src="https://images.unsplash.com/photo-1590080875515-8a3a8dc5735e?auto=format&fit=crop&w=900&q=80"
+                alt="Chak-chak"
+              >
+
+            </div>
+
+            <div class="menu-body">
+
+              <div class="menu-top">
+
+                <h3>Chak-Chak</h3>
+
+                <span class="price">
+                  28 000 so'm
+                </span>
+
+              </div>
+
+              <p>
+                Asal bilan uyg'unlashgan mayin va
+                shirin milliy desert.
+              </p>
+
+              <button
+                class="add-btn"
+                onclick="addToCart('Chak-Chak', 28000)"
+              >
+                + Savatga qo'shish
+              </button>
+
+            </div>
+
+          </article>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         STORY
+    ========================== -->
+
+    <section class="story" id="about">
+
+      <div class="container story-grid">
+
+        <div class="story-image">
+
+          <img
+            src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=85"
+            alt="Navruz restorani"
+          >
+
+        </div>
+
+
+        <div>
+
+          <div class="eyebrow">
+            Bizning hikoyamiz
+          </div>
+
+          <h2>
+            Dasturxon —
+            <br>
+            bizning madaniyatimiz.
+          </h2>
+
+          <p>
+            Navruz restoranida biz o'zbek oshxonasining
+            boy merosini zamonaviy restoran madaniyati
+            bilan birlashtiramiz.
+          </p>
+
+          <p>
+            Har bir taom ortida tarix, an'ana va
+            ustozlardan o'rganilgan mahorat bor.
+          </p>
+
+          <div class="stats">
+
+            <div class="stat">
+              <strong>12+</strong>
+              <span>yillik tajriba</span>
+            </div>
+
+            <div class="stat">
+              <strong>50+</strong>
+              <span>milliy taom</span>
+            </div>
+
+            <div class="stat">
+              <strong>4.9</strong>
+              <span>mijozlar bahosi</span>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         RESERVATION
+    ========================== -->
+
+    <section class="reservation" id="reservation">
+
+      <div class="container">
+
+        <div class="reservation-box">
+
+          <div class="eyebrow">
+            Mehmonimiz bo'ling
+          </div>
+
+          <h2>
+            Dasturxonimiz siz uchun tayyor
+          </h2>
+
+          <p>
+            Oilaviy kechki ovqat, biznes uchrashuvi yoki
+            do'stlar davrasi — siz uchun munosib joyni
+            oldindan band qilib qo'ying.
+          </p>
+
+          <button
+            class="btn btn-gold"
+            onclick="openReservation()"
+          >
+            Stol band qilish
+          </button>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- =========================
+       FOOTER
+  ========================== -->
+
+  <footer>
+
+    <div class="container">
+
+      <div class="footer-grid">
+
+        <div>
+
+          <a href="#home" class="logo">
+
+            <div class="logo-mark">N</div>
+
+            <div class="logo-text">
+              <strong>Navruz</strong>
+              <span>MILLIY TAOMLAR</span>
+            </div>
+
+          </a>
+
+          <br>
+
+          <p>
+            O'zbek milliy taomlarining haqiqiy ta'mini
+            zamonaviy mehmondo'stlik bilan taqdim etamiz.
+          </p>
+
+        </div>
+
+
+        <div>
+
+          <h3>Sayt</h3>
+
+          <a href="#home">Bosh sahifa</a>
+          <a href="#menu">Menyu</a>
+          <a href="#about">Biz haqimizda</a>
+          <a href="#reservation">Aloqa</a>
+
+        </div>
+
+
+        <div>
+
+          <h3>Aloqa</h3>
+
+          <p>Toshkent shahri</p>
+          <p>+998 71 200 20 20</p>
+          <p>info@navruz.uz</p>
+
+        </div>
+
+
+        <div>
+
+          <h3>Ish vaqti</h3>
+
+          <p>Dushanba — Yakshanba</p>
+          <p>10:00 — 23:00</p>
+
+        </div>
+
+      </div>
+
+
+      <div class="footer-bottom">
+
+        <span>
+          © 2026 Navruz. Barcha huquqlar himoyalangan.
+        </span>
+
+        <span>
+          Milliy ta'm. Zamonaviy mehmondo'stlik.
+        </span>
+
+      </div>
+
+    </div>
+
+  </footer>
+
+
+  <!-- =========================
+       RESERVATION MODAL
+  ========================== -->
+
+  <div
+    class="modal-overlay"
+    id="reservationModal"
+  >
+
+    <div class="modal">
+
+      <button
+        class="close-modal"
+        onclick="closeReservation()"
+      >
+        ×
+      </button>
+
+      <h2>Stol band qilish</h2>
+
+      <p>
+        Ma'lumotlaringizni qoldiring. Tez orada
+        siz bilan bog'lanamiz.
+      </p>
+
+      <form id="reservationForm">
+
+        <div class="form-group">
+
+          <label>Ismingiz</label>
+
+          <input
+            type="text"
+            placeholder="Ismingiz"
+            required
+          >
+
+        </div>
+
+        <div class="form-group">
+
+          <label>Telefon raqam</label>
+
+          <input
+            type="tel"
+            placeholder="+998 90 123 45 67"
+            required
+          >
+
+        </div>
+
+        <div class="form-group">
+
+          <label>Sana</label>
+
+          <input
+            type="date"
+            required
+          >
+
+        </div>
+
+        <div class="form-group">
+
+          <label>Vaqt</label>
+
+          <select required>
+
+            <option value="">
+              Vaqtni tanlang
+            </option>
+
+            <option>12:00</option>
+            <option>14:00</option>
+            <option>16:00</option>
+            <option>18:00</option>
+            <option>20:00</option>
+            <option>22:00</option>
+
+          </select>
+
+        </div>
+
+        <div class="form-group">
+
+          <label>Mehmonlar soni</label>
+
+          <select required>
+
+            <option value="">
+              Tanlang
+            </option>
+
+            <option>1–2 kishi</option>
+            <option>3–4 kishi</option>
+            <option>5–8 kishi</option>
+            <option>9+ kishi</option>
+
+          </select>
+
+        </div>
+
+        <button
+          class="btn btn-gold submit-btn"
+          type="submit"
+        >
+          Band qilish
+        </button>
+
+      </form>
+
+    </div>
+
+  </div>
+
+
+  <!-- =========================
+       CART PANEL
+  ========================== -->
+
+  <aside
+    class="cart-panel"
+    id="cartPanel"
+  >
+
+    <div class="cart-header">
+
+      <h2>Savat</h2>
+
+      <button
+        class="cart-close"
+        id="cartClose"
+      >
+        ×
+      </button>
+
+    </div>
+
+    <div
+      class="cart-items"
+      id="cartItems"
+    >
+
+      <div class="empty-cart">
+        Savatingiz hozircha bo'sh.
+      </div>
+
+    </div>
+
+    <div class="cart-footer">
+
+      <div class="cart-total">
+
+        <span>Jami:</span>
+
+        <span id="cartTotal">
+          0 so'm
+        </span>
+
+      </div>
+
+      <button
+        class="btn btn-gold"
+        style="width:100%"
+        onclick="openReservation()"
+      >
+        Buyurtma berish
+      </button>
+
+    </div>
+
+  </aside>
+
+
+  <script>
+
+    /* =========================
+       HEADER SCROLL
+    ========================== */
+
+    const header = document.getElementById("header");
+
+    window.addEventListener("scroll", () => {
+
+      if (window.scrollY > 30) {
+        header.classList.add("scrolled");
+      } else {
+        header.classList.remove("scrolled");
+      }
+
+    });
+
+
+    /* =========================
+       MOBILE MENU
+    ========================== */
+
+    const mobileToggle =
+      document.getElementById("mobileToggle");
+
+    const mobileNav =
+      document.getElementById("mobileNav");
+
+    mobileToggle.addEventListener("click", () => {
+
+      mobileNav.classList.toggle("active");
+
+      mobileToggle.textContent =
+        mobileNav.classList.contains("active")
+          ? "×"
+          : "☰";
+
+    });
+
+
+    document
+      .querySelectorAll(".mobile-nav a")
+      .forEach(link => {
+
+        link.addEventListener("click", () => {
+
+          mobileNav.classList.remove("active");
+
+          mobileToggle.textContent = "☰";
+
+        });
+
+      });
+
+
+    /* =========================
+       MENU FILTER
+    ========================== */
+
+    const categoryButtons =
+      document.querySelectorAll(".category-btn");
+
+    const menuCards =
+      document.querySelectorAll(".menu-card");
+
+    categoryButtons.forEach(button => {
+
+      button.addEventListener("click", () => {
+
+        categoryButtons.forEach(btn =>
+          btn.classList.remove("active")
+        );
+
+        button.classList.add("active");
+
+        const category =
+          button.dataset.category;
+
+        menuCards.forEach(card => {
+
+          const cardCategory =
+            card.dataset.category;
+
+          if (
+            category === "all" ||
+            category === cardCategory
+          ) {
+
+            card.style.display = "block";
+
+          } else {
+
+            card.style.display = "none";
+
+          }
+
+        });
+
+      });
+
+    });
+
+
+    /* =========================
+       CART
+    ========================== */
+
+    let cart = [];
+
+    const cartButton =
+      document.getElementById("cartButton");
+
+    const cartPanel =
+      document.getElementById("cartPanel");
+
+    const cartClose =
+      document.getElementById("cartClose");
+
+    const cartItems =
+      document.getElementById("cartItems");
+
+    const cartCount =
+      document.getElementById("cartCount");
+
+    const cartTotal =
+      document.getElementById("cartTotal");
+
+
+    function addToCart(name, price) {
+
+      const existing =
+        cart.find(item => item.name === name);
+
+      if (existing) {
+
+        existing.quantity++;
+
+      } else {
+
+        cart.push({
+          name,
+          price,
+          quantity: 1
+        });
+
+      }
+
+      updateCart();
+
+      cartPanel.classList.add("active");
+
+    }
+
+
+    function updateCart() {
+
+      if (cart.length === 0) {
+
+        cartItems.innerHTML = `
+          <div class="empty-cart">
+            Savatingiz hozircha bo'sh.
+          </div>
+        `;
+
+      } else {
+
+        cartItems.innerHTML =
+          cart.map((item, index) => `
+
+            <div class="cart-item">
+
+              <div>
+
+                <h4>${item.name}</h4>
+
+                <p>
+                  ${formatPrice(item.price)}
+                  × ${item.quantity}
+                </p>
+
+              </div>
+
+              <button
+                class="remove-item"
+                onclick="removeFromCart(${index})"
+              >
+                O'chirish
+              </button>
+
+            </div>
+
+          `).join("");
+
+      }
+
+      const totalItems =
+        cart.reduce(
+          (sum, item) => sum + item.quantity,
+          0
+        );
+
+      const totalPrice =
+        cart.reduce(
+          (sum, item) =>
+            sum + item.price * item.quantity,
+          0
+        );
+
+      cartCount.textContent = totalItems;
+
+      cartTotal.textContent =
+        formatPrice(totalPrice);
+
+    }
+
+
+    function removeFromCart(index) {
+
+      cart.splice(index, 1);
+
+      updateCart();
+
+    }
+
+
+    function formatPrice(number) {
+
+      return number
+        .toLocaleString("uz-UZ")
+        + " so'm";
+
+    }
+
+
+    cartButton.addEventListener("click", () => {
+
+      cartPanel.classList.add("active");
+
+    });
+
+
+    cartClose.addEventListener("click", () => {
+
+      cartPanel.classList.remove("active");
+
+    });
+
+
+    /* =========================
+       RESERVATION MODAL
+    ========================== */
+
+    const reservationModal =
+      document.getElementById("reservationModal");
+
+
+    function openReservation() {
+
+      reservationModal.classList.add("active");
+
+      cartPanel.classList.remove("active");
+
+      mobileNav.classList.remove("active");
+
+    }
+
+
+    function closeReservation() {
+
+      reservationModal.classList.remove("active");
+
+    }
+
+
+    reservationModal.addEventListener(
+      "click",
+      event => {
+
+        if (
+          event.target === reservationModal
+        ) {
+
+          closeReservation();
+
+        }
+
+      }
+    );
+
+
+    /* =========================
+       FORM
+    ========================== */
+
+    const reservationForm =
+      document.getElementById("reservationForm");
+
+    reservationForm.addEventListener(
+      "submit",
+      event => {
+
+        event.preventDefault();
+
+        alert(
+          "Rahmat! Stol band qilish so'rovingiz qabul qilindi."
+        );
+
+        reservationForm.reset();
+
+        closeReservation();
+
+      }
+    );
+
+
+    /* =========================
+       ESCAPE KEY
+    ========================== */
+
+    document.addEventListener(
+      "keydown",
+      event => {
+
+        if (event.key === "Escape") {
+
+          closeReservation();
+
+          cartPanel.classList.remove("active");
+
+        }
+
+      }
+    );
+
+  </script>
+
+</body>
+</html>
